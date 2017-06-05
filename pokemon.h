@@ -20,7 +20,7 @@ public:
 		dexNum = 999;
 		type1 = "";
 		type2 = "";
-		bst = 0;
+		statTotal = 0;
 	}
 	pokemon(std::string v, int w, std::string x, std::string y,int z)
 	{
@@ -28,7 +28,7 @@ public:
 		dexNum = w;
 		type1 = x;
 		type2 = y;
-		bst = z;
+		statTotal = z;
 	}	
 
 	//getters
@@ -50,7 +50,7 @@ public:
 	}
 	int getBST()
 	{
-		return bst;
+		return statTotal;
 	}
 	
 	//setters
