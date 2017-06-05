@@ -11,11 +11,7 @@ private:
 	int dexNum;
 	std::string type1;
 	std::string type2;
-	int bst;
-	pokemon *prev;
-	pokemon *next;
-	pokemon *left;
-	pokemon *right;
+	int statTotal;
 public:
 	//Constructors
 	pokemon()
@@ -25,10 +21,6 @@ public:
 		type1 = "";
 		type2 = "";
 		bst = 0;
-		prev = nullptr;
-		next = nullptr;
-		left = nullptr;
-		right = nullptr;
 	}
 	pokemon(std::string v, int w, std::string x, std::string y,int z)
 	{
@@ -37,35 +29,7 @@ public:
 		type1 = x;
 		type2 = y;
 		bst = z;
-		prev = nullptr;
-		next = nullptr;
-		left = nullptr;
-		right = nullptr;
 	}	
-	pokemon(std::string v, int w, std::string x, std::string y, int z, pokemon* P, pokemon* L, pokemon* R)
-	{
-		name = v;
-		dexNum = w;
-		type1 = x;
-		type2 = y;
-		bst = z;
-		prev = P;
-		next = nullptr;
-		left = L;
-		right = R;
-	}
-	pokemon(std::string v, int w, std::string x, std::string y, int z, pokemon* P, pokemon* N)
-	{
-		name = v;
-		dexNum = w;
-		type1 = x;
-		type2 = y;
-		bst = z;
-		prev = P;
-		next = N;
-		left = nullptr;
-		right = nullptr;
-	}
 
 	//getters
 	std:: string getName()
@@ -88,23 +52,7 @@ public:
 	{
 		return bst;
 	}
-	pokemon* getPrev()
-	{
-		return prev;
-	}
-	pokemon* getNext()
-	{
-		return next;
-	}
-	pokemon* getLeft()
-	{
-		return left;
-	}
-	pokemon *getRight()
-	{
-		return right;
-	}
-
+	
 	//setters
 	void setName(std::string x)
 	{
@@ -125,22 +73,6 @@ public:
 	void setBST(int x)
 	{
 		bst = x;
-	}
-	void setPrev(pokemon* p)
-	{
-		prev = p;
-	}
-	void setNext(pokemon* n)
-	{
-		next = n;
-	}
-	void setLeft(pokemon* l)
-	{
-		left = l;
-	}
-	void setRight(pokemon* r)
-	{
-		right = r;
 	}
 	
 	//Overloading >> operator to read in data from file
