@@ -270,6 +270,22 @@ protected:
 		cout_In_orderTraversal(currentRoot->rightBranch); // check the right branch for a valid path
 	}
 
+	int findDepth(DualLinkDataNode<T> *currentRoot, int level){
+		// if the currentRoot is null, that means this branch's patch is at the end
+		int templevel1; 
+		int templevel2;
+		if (currentRoot == nullptr) return level;
+		level++;
+		templevel1 = findDepth(currentRoot->leftBranch, level); // check the left branch for a valid path
+		templevel2 = findDepth(currentRoot->rightBranch, level); // check the right branch for a valid path
+		if (templevel1 > templevel2)
+			templevel2 = templevel1;
+		level = templevel2;
+		return level;
+
+
+	}
+
 	//  Use a post order traverse to get to the bottom of the tree,
 	//  then delete the node and use recursion to work back up the tree
 	//  the function is protected from anything outside of the class
@@ -507,6 +523,16 @@ public:
 		else
 		{
 			cout_In_orderTraversal(rootNode);
+		}
+	}
+	int findDepth(){
+		int level = 0;
+		if (!rootNode){
+			return level;
+		}
+		else
+		{
+			findDepth(rootNode, level);
 		}
 	}
 };

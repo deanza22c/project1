@@ -108,10 +108,6 @@ int main()
 				  // both the hash table and binary search tree need add functions
 				  // use this case to call those add functions
 				  // leo and alex will make the add functions in the their class files
-
-
-
-
 				  system("cls");
 				  cout << "this is the add data choice\n";
 				  cout << "enter in creature number: ";
@@ -199,6 +195,7 @@ int main()
 				  // cout the binary tree horizontally, alex and hammud will collaborate as needed on this
 				  //system("cls");
 				  cout << "this is the printed indented tree choice\n";
+				  cout << pokemonBST.findDepth();
 				  choice = 9;
 				  break;
 		}
